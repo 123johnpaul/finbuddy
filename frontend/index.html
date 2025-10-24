@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fintech Buddy – Dashboard</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app">
+      <!-- Sidebar for desktop -->
+      <aside class="sidebar">
+        <div class="logo-section">
+          <div class="logo-box"></div>
+          <span class="logo-text">Bleek</span>
+        </div>
+        <nav class="nav-items">
+          <a href="index.html" class="nav-item active">Dashboard</a>
+          <a href="insights.html" class="nav-item">Insights</a>
+          <a href="goals.html" class="nav-item">Goals</a>
+          <a href="profile.html" class="nav-item">Profile</a>
+        </nav>
+        <div class="sidebar-footer">
+          <div class="saved-goal-label">Saved goal</div>
+          <div class="saved-goal-card">
+            <div class="goal-text">
+              ₦300/day → ₦9,000/month
+            </div>
+            <div class="goal-bar">
+              <div class="goal-bar-fill" style="width: 55%"></div>
+            </div>
+          </div>
+        </div>
+      </aside>
+      <!-- Main content -->
+      <div class="main-content">
+        <!-- Mobile top bar -->
+        <div class="mobile-top-bar">
+          <button class="mobile-icon">≡</button>
+          <div class="mobile-title">Fintech Buddy</div>
+          <button class="mobile-icon">🔔</button>
+        </div>
+        <!-- Page header -->
+        <header class="page-header">
+          <div class="header-left">
+            <div class="robot-icon">
+              <!-- Simple robot SVG inline -->
+              <svg viewBox="0 0 64 64" class="robot-svg">
+                <rect x="10" y="16" width="44" height="32" rx="12" fill="none" stroke="currentColor" stroke-width="3" />
+                <circle cx="26" cy="32" r="4" fill="currentColor" />
+                <circle cx="38" cy="32" r="4" fill="currentColor" />
+                <rect x="28" y="40" width="8" height="4" rx="2" fill="currentColor" />
+              </svg>
+            </div>
+            <div class="greeting-text">
+              <div class="app-title">Fintech Buddy</div>
+              <div id="greeting" class="greeting">Hi!</div>
+            </div>
+          </div>
+          <div class="header-badges">
+            <span class="badge">Dashboard</span>
+            <span class="badge">Insights</span>
+            <span class="badge">Profile</span>
+          </div>
+        </header>
+        <!-- Content grid -->
+        <div class="content-grid">
+          <!-- Left column with larger cards -->
+          <div class="left-column">
+            <div class="card summary-card">
+              <div class="card-header">
+                <h2>Spending Summary</h2>
+                <button class="card-action">This week ▶</button>
+              </div>
+              <div class="summary-body">
+                <div class="donut-wrapper">
+                  <div id="donutChart" class="donut-chart"></div>
+                </div>
+                <ul id="summaryList" class="summary-list"></ul>
+              </div>
+            </div>
+            <div class="card predictive-card">
+              <div class="card-header">
+                <h2>Predictive Spend</h2>
+                <span class="badge">Latest</span>
+              </div>
+              <div class="predictive-body">
+                <svg id="lineChart" class="line-chart" viewBox="0 0 100 50" preserveAspectRatio="none">
+                  <!-- Path will be drawn by script -->
+                </svg>
+              </div>
+            </div>
+            <!-- Expenses management card -->
+            <div class="card expenses-card">
+              <div class="card-header">
+                <h2>Expenses</h2>
+              </div>
+              <form id="expenseForm" class="expense-form">
+                <input type="text" id="expenseCategory" placeholder="Category" list="categoryList" required />
+                <datalist id="categoryList">
+                  <option value="Food"></option>
+                  <option value="Transport"></option>
+                  <option value="Data"></option>
+                  <option value="Miscellaneous"></option>
+                </datalist>
+                <input type="number" id="expenseAmount" placeholder="Amount" min="0" step="0.01" required />
+                <button type="submit" class="expense-add">Add Expense</button>
+              </form>
+              <ul id="expenseList" class="expense-list"></ul>
+            </div>
+          </div>
+          <!-- Right column with smaller cards -->
+          <div class="right-column">
+            <div class="card list-summary-card">
+              <h2>Spending summary</h2>
+              <div id="listSummary" class="list-summary"></div>
+            </div>
+            <div class="card alert-card">
+              <h2>Alert</h2>
+              <p class="alert-text">Upcoming Bill: <span class="alert-amount">₦2,500</span> due tomorrow.</p>
+            </div>
+            <div class="card goal-card">
+              <div class="goal-content">
+                <div class="goal-icon">💰</div>
+                <div>
+                  <div class="goal-info">₦300/day → ₦9,000/month</div>
+                  <div class="goal-label">Saving Goal</div>
+                </div>
+              </div>
+              <button class="goal-button">Update goal</button>
+            </div>
+          </div>
+        </div>
+        <!-- Bottom navigation for mobile -->
+        <nav class="mobile-bottom-nav">
+          <a href="index.html" class="nav-btn active">🏠<span>Dashboard</span></a>
+          <a href="insights.html" class="nav-btn">📊<span>Insights</span></a>
+          <a href="goals.html" class="nav-btn">🎯<span>Goals</span></a>
+          <a href="profile.html" class="nav-btn">👤<span>Profile</span></a>
+        </nav>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

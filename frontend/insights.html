@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fintech Buddy – Insights</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app">
+      <!-- Sidebar for desktop -->
+      <aside class="sidebar">
+        <div class="logo-section">
+          <div class="logo-box"></div>
+          <span class="logo-text">Bleek</span>
+        </div>
+        <nav class="nav-items">
+          <a href="index.html" class="nav-item">Dashboard</a>
+          <a href="insights.html" class="nav-item active">Insights</a>
+          <a href="goals.html" class="nav-item">Goals</a>
+          <a href="profile.html" class="nav-item">Profile</a>
+        </nav>
+        <div class="sidebar-footer">
+          <div class="saved-goal-label">Saved goal</div>
+          <div class="saved-goal-card">
+            <div class="goal-text">
+              ₦300/day → ₦9,000/month
+            </div>
+            <div class="goal-bar">
+              <div class="goal-bar-fill" style="width: 55%"></div>
+            </div>
+          </div>
+        </div>
+      </aside>
+      <!-- Main content -->
+      <div class="main-content">
+        <!-- Mobile top bar -->
+        <div class="mobile-top-bar">
+          <button class="mobile-icon">≡</button>
+          <div class="mobile-title">Insights</div>
+          <button class="mobile-icon">🔔</button>
+        </div>
+        <!-- Page header -->
+        <header class="page-header">
+          <div class="header-left">
+            <div class="robot-icon">
+              <svg viewBox="0 0 64 64" class="robot-svg">
+                <rect x="10" y="16" width="44" height="32" rx="12" fill="none" stroke="currentColor" stroke-width="3" />
+                <circle cx="26" cy="32" r="4" fill="currentColor" />
+                <circle cx="38" cy="32" r="4" fill="currentColor" />
+                <rect x="28" y="40" width="8" height="4" rx="2" fill="currentColor" />
+              </svg>
+            </div>
+            <div class="greeting-text">
+              <div class="app-title">Insights</div>
+              <div id="greeting" class="greeting">Hi!</div>
+            </div>
+          </div>
+          <div class="header-badges">
+            <span class="badge">Dashboard</span>
+            <span class="badge active">Insights</span>
+            <span class="badge">Profile</span>
+          </div>
+        </header>
+        <!-- Content grid -->
+        <div class="content-grid">
+          <!-- Left column: category summary -->
+          <div class="left-column">
+            <div class="card summary-card">
+              <div class="card-header">
+                <h2>Spending by Category</h2>
+              </div>
+              <div class="summary-body">
+                <div class="donut-wrapper">
+                  <div id="insightsDonut" class="donut-chart"></div>
+                </div>
+                <ul id="insightsSummaryList" class="summary-list"></ul>
+              </div>
+            </div>
+          </div>
+          <!-- Right column: monthly chart -->
+          <div class="right-column">
+            <div class="card">
+              <div class="card-header">
+                <h2>Monthly Spending</h2>
+              </div>
+              <div id="monthlyChart" class="monthly-chart"></div>
+            </div>
+            <!-- AI Advice card -->
+            <div class="card advice-card">
+              <div class="card-header">
+                <h2>AI Advice</h2>
+              </div>
+              <div id="adviceList" class="advice-list"></div>
+            </div>
+          </div>
+        </div>
+        <!-- Bottom navigation for mobile -->
+        <nav class="mobile-bottom-nav">
+          <a href="index.html" class="nav-btn">🏠<span>Dashboard</span></a>
+          <a href="insights.html" class="nav-btn active">📊<span>Insights</span></a>
+          <a href="goals.html" class="nav-btn">🎯<span>Goals</span></a>
+          <a href="profile.html" class="nav-btn">👤<span>Profile</span></a>
+        </nav>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
